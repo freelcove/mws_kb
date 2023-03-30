@@ -8,7 +8,11 @@ https://miro.com/app/board/uXjVMagPA0c=/
 # DB
 https://docs.google.com/spreadsheets/d/1URrW3Mb7IWGGEuStT4vKc2lU0qpZO5w7zkgP88Rt2io/edit?usp=sharing
 
-(참고) https://dbdiagram.io/
+# draw.io
+- 서정빈: 
+- 이진곤: 
+- 장대건: 
+- 소병수: 
 
 # Contacts
 - 박준호: freelcove@gmail.com
