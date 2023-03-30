@@ -11,7 +11,7 @@ https://docs.google.com/spreadsheets/d/1URrW3Mb7IWGGEuStT4vKc2lU0qpZO5w7zkgP88Rt
 # draw.io
 - 서정빈: 
 - 이진곤: 
-- 장대건: 
+- 장대건: https://drive.google.com/file/d/1EO6AZZ2dlJ0FhO2Mh_ej1oBleDHEKyAP/view?usp=sharing
 - 소병수: 
 
 # Contacts
