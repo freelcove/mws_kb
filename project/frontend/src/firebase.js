@@ -14,13 +14,7 @@ import {
 //import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAFBTmazyqFI8e1gg-L0-A4sucJZjaUeYE",
-  authDomain: "mws-kb.firebaseapp.com",
-  projectId: "mws-kb",
-  storageBucket: "mws-kb.appspot.com",
-  messagingSenderId: "918442026729",
-  appId: "1:918442026729:web:a6b5e571383c83f6d87278",
-  measurementId: "G-XY6M0C21HF"
+
 };
 
 const app = initializeApp(firebaseConfig);
