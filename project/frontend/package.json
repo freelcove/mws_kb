@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "dotenv": "^16.0.3",
     "firebase": "^9.18.0",
     "pinia": "^2.0.33",
     "pixi.js": "^7.2.3",
