@@ -16,7 +16,7 @@ select 'drop table '||TABLE_NAME||' cascade constraints;' from USER_TABLEs;
 create table product_group_detail
 (
 prod_group_det_num  int default p_group_det_id.nextval primary key,
-prod_higher_group_num int references prodcut_group(prod_group_num),
+prod_higher_group_num int references product_group(prod_group_num),
 prod_group_det_name varchar2(50) not null
 );
 
@@ -26,8 +26,8 @@ create table corporation
 (
 corp_num    char(7) primary key,
 corp_name   varchar2(100) not null,
-corp_orner_name  varchar2(100),
-corp_orner_code varchar2(100) references users(user_id),
+corp_owner_name  varchar2(100),
+corp_owner_code varchar2(100) references users(user_id),
 corp_phnum  varchar2(13),
 corp_email  varchar2(100),
 corp_group  int references product_group(prod_group_num)

@@ -149,8 +149,10 @@ input_sale_price int
 )
 is 
     v_price int;
+    v_corp char(12);
 begin
-if input_corp_num = (select product_own_corp from products where input_product_code = product_code)
+select product_own_corp into v_corp from products where input_product_code = product_code;
+if input_corp_num = v_corp
 then 
 
     if input_sale_price is null then select product_out_price into v_price from products where 

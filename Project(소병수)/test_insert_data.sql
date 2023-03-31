@@ -19,12 +19,14 @@ exec insert_product('엘라스틴 샴푸 4.2kg','', 1, 1, 4000, 7000, 50, '123-12-1234
 
 --판매등록(PRODUCT CODE, CORP NUM, PRICE)
 exec regist_sale(2,'123-12-12345','');
+exec regist_sale(3,'123-12-12346','');
 
 --고객 주문등록(CUST ID, SALE CODE, AMOUNT, COUNTRY, CITY, STREET)
 exec insert_order('qkrwnsgh',1,10,'대한민국','대구광역시','동구');
 
 --재고 주문등록(ORDER PRODUCT, STOCK PRODUCT, SUPPLIER, BUYER, AMOUNT, PRICE)
 exec order_stock(3,2,'123-12-12346','123-12-12345',10,5000);
+
 
 
 
