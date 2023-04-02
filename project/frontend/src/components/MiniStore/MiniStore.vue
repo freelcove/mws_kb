@@ -98,7 +98,7 @@ export default {
 
         onMounted(() => {
             const user = auth.currentUser;
-            if (user && user.uid === "MnzowVJSdURV2Hd4RRHPJaWE7Rm1") {
+            if (user && user.uid === "auWPVB7abbcbtSPOyVTtReBGsHb2") {
                 isAdmin.value = true;
             }
         });
@@ -157,7 +157,7 @@ export default {
                 cart.value.splice(index, 1);
             }
         };
-        const storeOwnerId = "MnzowVJSdURV2Hd4RRHPJaWE7Rm1";
+        const storeOwnerId = "auWPVB7abbcbtSPOyVTtReBGsHb2";
 
         const transferMoneyToStoreOwner = async (amount) => {
             const currentUser = auth.currentUser;
