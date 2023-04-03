@@ -23,3 +23,14 @@ user_registDate date,
 user_birthDate date,
 user_name varchar2(100) not null
 );
+
+
+insert into country values ('82','한국');
+insert into country values ('1','미국');
+
+insert into city values ('02','서울','82');
+insert into city values ('042','대전','82');
+insert into city values ('053','대구','82');
+insert into city values ('051','부산','82');
+insert into city values ('1','워싱턴','1');
+insert into city values ('2','뉴욕','1');
