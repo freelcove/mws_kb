@@ -84,17 +84,17 @@ is
 input_sale_price int;
 input_corp_num char(12);
 begin
-select sale_price*input_order_amount into input_sale_price from sale_product where input_sale_code=sale_id;
+select sale_price into input_sale_price from sale_product where input_sale_code=sale_id;
 select sale_corp_num into input_corp_num from sale_product where input_sale_code=sale_id;
 insert into customer_orders(cust_id,sale_code,sale_price,order_amount,delivery_address_country,delivery_address_city,delivery_address_street,corp_num)
 values(input_cust_id,input_sale_code,input_sale_price,input_order_amount,input_address_country,input_address_city,input_address_street,input_corp_num);
 --고객 자산 감소
-update users set user_balance=user_balance - input_sale_price where input_cust_id=user_id;
+update users set user_balance=user_balance - total_price(input_sale_price,input_order_amount) where input_cust_id=user_id;
 --제품 재고수량 감소
 update products set product_stock_count = product_stock_count - input_order_amount where products.product_code = (select sale_product_code from sale_product where input_sale_code = sale_id);
 
 --판매자 자산 증가
-update users set user_balance = user_balance + input_sale_price where user_id = (select corp_owner_code from corporation where corp_num=input_corp_num);
+update users set user_balance = user_balance + total_price(input_sale_price,input_order_amount) where user_id = (select corp_owner_code from corporation where corp_num=input_corp_num);
 commit;
 end insert_order;
 
@@ -127,13 +127,13 @@ end if;
 --주문자 기존 재고수량 복사
 select product_stock_count into existing_amount from products where product_code = input_stocked_product;
 --주문자 자산 감소
-update users set user_balance = user_balance - (input_price * input_amount) where user_id = (select corp_owner_code from corporation where input_buyer = corp_num);
+update users set user_balance = user_balance - total_price(input_price , input_amount) where user_id = (select corp_owner_code from corporation where input_buyer = corp_num);
 --공급자 자산 증가
-update users set user_balance = user_balance + (input_price * input_amount) where user_id = (select corp_owner_code from corporation where input_supplier = corp_num);
+update users set user_balance = user_balance + total_price(input_price , input_amount) where user_id = (select corp_owner_code from corporation where input_supplier = corp_num);
 --주문자 재고수량 증가
 update products set product_stock_count = product_stock_count + input_amount where product_code = input_stocked_product;
 --주문자 제품 매입가 평균값으로 변경
-update products set product_in_price = ((product_in_price * existing_amount) + (input_price * input_amount))/(input_amount + existing_amount) where product_code = input_stocked_product;
+update products set product_in_price = (total_price(product_in_price , existing_amount) + total_price(input_price , input_amount))/(input_amount + existing_amount) where product_code = input_stocked_product;
 --공급자 제품 재고수량 감소
 update products set product_stock_count = product_stock_count - input_amount where product_code = input_order_product;
 commit;
@@ -167,6 +167,19 @@ commit;
 end regist_sale;
 
 /
+--사용자 자금 충전 프로시저
+create or replace procedure charge_balance
+(
+input_user_id varchar2,
+input_money int
+)
+is
+current_balance int;
+begin
+update users set user_balance = user_balance+input_money where user_id=input_user_id;
+commit;
+end charge_balance;
+
 
 
 
