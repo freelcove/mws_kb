@@ -4,13 +4,15 @@ create sequence cust_order_id;
 create sequence sale_product_id;
 create sequence p_group_det_id;
 create sequence corp_order_id;
+create sequence movement_money_id;
+create sequence stock_movement_id;
 
 create table product_group
 (
 prod_group_num     int default p_group_id.nextval primary key,
 prod_group_name    varchar2(30) not null
 );
-select 'drop table '||TABLE_NAME||' cascade constraints;' from USER_TABLEs;
+
 
 
 create table product_group_detail
@@ -34,6 +36,7 @@ corp_group  int references product_group(prod_group_num)
 );
 
 
+
 create table products
 (
 product_code        int default product_id.nextval primary key,
@@ -48,23 +51,6 @@ product_stock_count int default 0,
 product_own_corp       char(12) references corporation(corp_num)
 );
 
-drop table products;
-
-create table customer_orders
-(
-cust_order_num          int default cust_order_id.nextval primary key,
-cust_id                 varchar2(100) references users(user_id) not null,
-sale_code            int references sale_product(sale_id) not null,
-sale_price              int not null,
-order_amount            int not null,
-order_date              date default sysdate not null,
-delivery_address_country varchar2(100) not null,
-delivery_address_city   varchar2(100) not null,
-delivery_address_street   varchar2(300) not null,
-corp_num                char(12) references corporation(corp_num) not null
-);
-
-drop table customer_orders;
 
 create table sale_product
 (
@@ -75,7 +61,21 @@ sale_price int not null
 
 );
 
-drop table sale_product;
+
+create table customer_orders
+(
+cust_order_num          int default cust_order_id.nextval primary key,
+cust_id                 varchar2(100) references users(user_id) not null,
+sale_code            int references sale_product(sale_id) not null,
+sale_price              int not null,
+order_amount            int not null,
+order_date              date default sysdate not null,
+delivery_address_country varchar2(10) not null references country(country_code),
+delivery_address_city   varchar2(10) not null references city(city_code),
+delivery_address_street   varchar2(300) not null,
+corp_num                char(12) references corporation(corp_num) not null
+);
+
 
 create table corp_order_table
 (
@@ -89,6 +89,29 @@ order_price int default 0,
 order_date date default sysdate
 );
 
-drop table corp_order_table;
+create table backup_movement_money
+(
+money_serial_num varchar2(100) default sysdate || movement_money_id.nextval primary key,
+money_who varchar2(100) not null references users(user_id),
+money_old int,
+money_new int default 0,
+money_change int default 0,
+money_trade_date date default sysdate
+);
 
 
+create table backup_stock_movement
+(
+stock_serial_num varchar2(100) default sysdate||stock_movement_id.nextval primary key,
+stock_who char(12) not null references corporation(corp_num),
+stock_corp_name varchar2(100),
+stock_product_code int references products(product_code),
+stock_product_name varchar2(100),
+stock_product_old int,
+stock_product_new int,
+stock_product_changing int,
+stock_change_date date default sysdate
+);
+drop table backup_stock_movement;
+
+alter table backup_stock_movement modify stock_serial_num default sysdate||stock_movement_id.nextval;
