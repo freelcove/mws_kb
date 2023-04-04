@@ -33,9 +33,6 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('Error occurred while adding delivery data for order_num ' || p_order_num);
 END add_delivery;
 /
-select * from orders;
-select * from delivery;
-execute add_delivery('001','DEL001','진행');
-execute add_delivery('002','DEL002','진행');
+
 
 

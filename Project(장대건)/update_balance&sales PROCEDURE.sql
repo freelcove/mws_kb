@@ -42,9 +42,4 @@ BEGIN
     END IF;
 END update_balance_and_sales;
 /
-select * from orders;
-select * from users;
-select * from delivery;
-select * from payment;
-select * from user_order_info;
-execute update_balance_and_sales('001');
+

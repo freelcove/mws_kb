@@ -32,15 +32,5 @@ BEGIN
     END IF;
 END insert_order_food;
 /
-select * from order_possible;
-select * from order_impossible;
-select * from restaurant_menu;
-select * from orders;
-select * from menu;
-drop procedure update_balance_and_sales;
 
-execute insert_order_food('001','user006','24','21');
-execute insert_order_food('002','user004','24','22');
-execute insert_order_food('003','user006','24','23');
-execute insert_order_food('004','user009','29','35');
 
