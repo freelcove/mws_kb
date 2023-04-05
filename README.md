@@ -5,8 +5,8 @@
 # Progress Board
 https://miro.com/app/board/uXjVMagPA0c=/
 
-# DB
-https://docs.google.com/spreadsheets/d/1URrW3Mb7IWGGEuStT4vKc2lU0qpZO5w7zkgP88Rt2io/edit?usp=sharing
+# 요구사항 명세서
+https://docs.google.com/spreadsheets/d/1Ffk7X-L3KYpmgyzQEli0WWptiFud4qxwf4IXBaaB1Jo/edit?usp=sharing
 
 # draw.io
 - 서정빈: https://drive.google.com/file/d/1JRMWkW5OepLtQIyFKoGCjjz5VbyBEqbj/view?usp=sharing
