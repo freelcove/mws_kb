@@ -29,7 +29,7 @@ create table corporation
 corp_num    char(7) primary key,
 corp_name   varchar2(100) not null,
 corp_owner_name  varchar2(100),
-corp_owner_code varchar2(100) references users(user_id),
+corp_owner_code varchar2(100) references users(user_id) NOT NULL,
 corp_phnum  varchar2(13),
 corp_email  varchar2(100),
 corp_group  int references product_group(prod_group_num)
@@ -48,7 +48,7 @@ product_stocked_date    date default sysdate,
 product_in_price    int default 0,
 product_out_price   int default 0,
 product_stock_count int default 0,
-product_own_corp       char(12) references corporation(corp_num)
+product_own_corp       char(12) references corporation(corp_num) NOT NULL
 );
 
 

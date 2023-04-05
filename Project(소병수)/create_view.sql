@@ -92,6 +92,6 @@ select 판매제품코드 from merge_all_cust_order group by 판매제품코드 having sum(�
 select 사업자번호 from merge_all_cust_order group by 사업자번호 having sum(주문수량)>
 (select avg(총주문수량) from sum_sale_amount_of_saller);
 
---하위 50% 판매자사업자번호
+--하위 50% 상위카테고리코드
 select 상위카테고리코드 from merge_all_cust_order group by 상위카테고리코드 having sum(주문수량)<
 (select avg(총주문수량) from sum_sale_amount_of_group);
