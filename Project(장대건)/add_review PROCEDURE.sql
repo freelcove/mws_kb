@@ -21,7 +21,6 @@ BEGIN
     FROM user_order_info
     WHERE ID = p_id;
     
-    -- 배달현황이 완료일 경우에만 리뷰 데이터 추가
     IF v_delivery_situation = '완료'
     THEN
     INSERT INTO review (review_num, review_writer, review_restaurant, review_menu, review_detail, review_registdate, review_starpoint)

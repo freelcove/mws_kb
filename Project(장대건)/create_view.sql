@@ -25,3 +25,13 @@ and order_user = delivery_receiver
 and order_user = pay_user
 and order_restaurant = restaurant_num
 and order_menu = menu_num;
+
+create view current_delivery_info as select user_id ID, order_num 주문번호, delivery_num 배달번호,restaurant_name 주문식당, delivery_restaurant 식당번호
+,menu_name 주문메뉴, delivery_menu 메뉴번호, order_price 가격, pay_method 결제방법, delivery_situation 배달현황
+from users, orders, delivery, payment, restaurant, menu
+where user_id = order_user
+and order_user = delivery_receiver
+and order_restaurant = restaurant_num
+and order_menu = delivery_menu
+and order_menu = menu_num;
+-- select distinct * from current_delivery_info;
