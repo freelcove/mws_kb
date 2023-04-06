@@ -17,7 +17,7 @@ BEGIN
     FROM users
     WHERE user_id = p_id;
     
-    -- delivery 테이블에서 해당 유저 아이디(p_id)에 대한 데이터를 조회
+    -- user_order_info 테이블에서 해당 유저 아이디(p_id)에 대한 데이터를 조회
     SELECT delivery_restaurant, delivery_menu, delivery_situation INTO v_delivery_restaurant, v_delivery_menu, v_delivery_situation
     FROM delivery
     WHERE delivery_receiver = p_id
