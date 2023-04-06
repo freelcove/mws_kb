@@ -9,7 +9,7 @@ https://miro.com/app/board/uXjVMagPA0c=/
 https://docs.google.com/spreadsheets/d/1Ffk7X-L3KYpmgyzQEli0WWptiFud4qxwf4IXBaaB1Jo/edit?usp=sharing
 
 # 개발정보
-https://docs.google.com/spreadsheets/d/1IPwLtMVyUoINo_GiFTv4IGvObRlkm585ZrYZDnM8TuQ/edit?hl=ko#gid=0
+https://docs.google.com/spreadsheets/d/1IPwLtMVyUoINo_GiFTv4IGvObRlkm585ZrYZDnM8TuQ/edit?usp=sharing
 
 # draw.io
 - 서정빈: https://drive.google.com/file/d/1JRMWkW5OepLtQIyFKoGCjjz5VbyBEqbj/view?usp=sharing
