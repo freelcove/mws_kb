@@ -129,12 +129,12 @@ exec insert_order('qkrwnsgh',1,20,'82','053','서구');
 exec insert_order('dlehdwns',1,20,'82','053','동구');
 
 --재고 주문등록(ORDER PRODUCT, STOCK PRODUCT, SUPPLIER, BUYER, AMOUNT, PRICE)
-exec order_stock(3,2,'123-12-12346','123-12-12345',10,5000);
+exec order_stock(3,2,'123-12-12346','123-12-12345',30,5000);
 
 
 --사용자 자금 충전(USER ID, CHARGE AMOUNT)
-exec charge_balance('qkrwnsgh',30000);
-exec charge_balance('wkdeorjs',40000);
+exec charge_balance('qkrwnsgh',130000);
+exec charge_balance('dlehdwns',140000);
 
 
 update users set users.user_balance=100000;

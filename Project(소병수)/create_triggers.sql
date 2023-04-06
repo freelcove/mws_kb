@@ -1,5 +1,4 @@
 --사용자 자금 변동사항 자동 기록 트리거
-
 create or replace trigger change_money_record
 before update on users
 for each row

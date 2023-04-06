@@ -18,8 +18,10 @@ select * from order_statement_by_main_category;
 --주문 전체 세부내역
 
 create or replace view merge_all_cust_order as
-select customer_orders.cust_order_num 주문번호,customer_orders.cust_id 고객아이디,users.user_name 고객명, customer_orders.sale_code 판매번호, customer_orders.order_amount 주문수량, customer_orders.sale_price 개당주문가격, total_price(order_amount,customer_orders.sale_price) 총금액, customer_orders.order_date 주문일자,
-sale_product.sale_product_code 판매제품코드, products.product_name 제품명,products.product_stock_count 재고수량, products.product_out_price 판매가, products.product_stocked_date 입고일자 ,products.product_group 상위카테고리코드, 
+select customer_orders.cust_order_num 주문번호,customer_orders.cust_id 고객아이디,users.user_name 고객명, customer_orders.sale_code 판매번호, 
+customer_orders.order_amount 주문수량, customer_orders.sale_price 개당주문가격, total_price(order_amount,customer_orders.sale_price) 총금액, customer_orders.order_date 주문일자,
+sale_product.sale_product_code 판매제품코드, products.product_name 제품명,products.product_stock_count 재고수량, products.product_out_price 판매가, 
+products.product_stocked_date 입고일자 ,products.product_group 상위카테고리코드, 
 product_group.prod_group_name 상위카테고리명, products.product_group_detail 하위카테고리코드, product_group_detail.prod_group_det_name 하위카테고리명,
 customer_orders.corp_num 사업자번호, corporation.corp_name 사업자명, corporation.corp_owner_code 판매자아이디, corporation.corp_owner_name 판매자명,
 country_name_kr 배송지국가명, city_name_kr 배송지도시명, delivery_address_street 배송지도로명주소 

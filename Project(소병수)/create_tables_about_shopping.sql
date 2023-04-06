@@ -1,11 +1,11 @@
-create sequence product_id;
-create sequence p_group_id;
-create sequence cust_order_id;
-create sequence sale_product_id;
-create sequence p_group_det_id;
-create sequence corp_order_id;
-create sequence movement_money_id;
-create sequence stock_movement_id;
+create sequence product_id; --제품 코드 생성
+create sequence p_group_id; --상위 카테고리 코드 생성
+create sequence cust_order_id; --고객 주문번호 코드 생성
+create sequence sale_product_id; --판매등록 코드 생성
+create sequence p_group_det_id; --하위 카테고리 코드 생성
+create sequence corp_order_id; --재고 주문 코드 생성
+create sequence movement_money_id; --자금 변동사항 백업 시리얼넘버 생성
+create sequence stock_movement_id; --재고 변동사항 백업 시리얼넘버 생성
 
 create table product_group
 (
@@ -13,16 +13,12 @@ prod_group_num     int default p_group_id.nextval primary key,
 prod_group_name    varchar2(30) not null
 );
 
-
-
 create table product_group_detail
 (
 prod_group_det_num  int default p_group_det_id.nextval primary key,
 prod_higher_group_num int references product_group(prod_group_num),
 prod_group_det_name varchar2(50) not null
 );
-
-
 
 create table corporation
 (
@@ -34,8 +30,6 @@ corp_phnum  varchar2(13),
 corp_email  varchar2(100),
 corp_group  int references product_group(prod_group_num)
 );
-
-
 
 create table products
 (
@@ -58,7 +52,6 @@ sale_id int default sale_product_id.nextval primary key,
 sale_product_code int references products(product_code) not null,
 sale_corp_num char(12) references corporation(corp_num) not null,
 sale_price int not null
-
 );
 
 
