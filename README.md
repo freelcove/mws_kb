@@ -18,6 +18,9 @@ https://docs.google.com/spreadsheets/d/1IPwLtMVyUoINo_GiFTv4IGvObRlkm585ZrYZDnM8
 - 장대건: https://drive.google.com/file/d/1EO6AZZ2dlJ0FhO2Mh_ej1oBleDHEKyAP/view?usp=sharing
 - 소병수: 
 
+# PPT
+https://www.miricanvas.com/login?redirect=%2Fdesign%2F11x0tps
+
 # Contacts
 - 박준호: freelcove@gmail.com
 - 서정빈: jungbinibini@gmail.com
