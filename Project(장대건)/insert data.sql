@@ -32,7 +32,7 @@ insert into restaurant VALUES (restaurant_seq.nextval, '003', '청국장', '82', '0
 insert into restaurant VALUES (restaurant_seq.nextval, '003', '중화요리집', '82', '053', '북구',0);
 insert into restaurant VALUES (restaurant_seq.nextval, '002', '프렌치', '82', '042', '유성구', 0);
 insert into restaurant VALUES (restaurant_seq.nextval, '005', '맥도날드', '82', '02', '서초구', 0);
-
+insert into restaurant VALUES (restaurant_seq.nextval, '006', '엽떡', '82', '02', '영등포구', 0);
 
 insert into menu values (menu_seq.nextval, '24', '비빔밥', 10000, '채소와 고기가 적당히 섞여 매콤하고 시원한 비빔밥입니다.');
 insert into menu values (menu_seq.nextval, '24', '불고기', 15000, '달콤한 소불고기와 고소한 쌈장을 함께 즐길 수 있는 메뉴입니다.');
@@ -50,3 +50,6 @@ insert into menu values (menu_seq.nextval, '28', '군만두', 2000, '먹으면 기절하�
 insert into menu values (menu_seq.nextval, '28', '마라샹궈', 22000, '먹으면 다시 주문하고싶어지는 마라샹궈입니다.');
 insert into menu values (menu_seq.nextval, '29', '마약토스트', 3000, '먹으면 생각나는 마약같은 토스트입니다.');
 insert into menu values (menu_seq.nextval, '30', '햄버거', 4000, '패티와 고기와 양배추가 잘 어울리는 햄버거입니다.');
+insert into menu values (menu_seq.nextval, '30', '햄버거', 4000, '패티와 고기와 양배추가 잘 어울리는 햄버거입니다.');
+insert into menu values (menu_seq.nextval, '41', '떡볶이', 15000, '매운맛이 일품인 떡볶이입니다.');
+insert into menu values (menu_seq.nextval, '41', '튀김', 3000, '떡볶이 국물에 찍어먹으면 맛있는 튀김입니다.');

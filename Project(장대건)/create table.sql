@@ -31,15 +31,13 @@ city_country_code varchar2(10) references country(country_code)
 create table restaurant
 (
 restaurant_num varchar2(10) primary key,
+restaurant_category varchar2(3) references category(category_num),
 restaurant_name varchar2(100),
-restaurant_country varchar2(100),
-restaurant_city varchar2(100),  
+restaurant_country varchar2(10) references country(country_code),
+restaurant_city varchar2(10) references city(city_code),  
 restaurant_street varchar2(100), 
 restaurant_sales number(38,2) default 0    
 );
-alter table restaurant add restaurant_category varchar2(3) references category(category_num);
-alter table restaurant modify restaurant_country varchar2(10) references country(country_code);
-alter table restaurant modify restaurant_city varchar2(10) references city(city_code);
 
 --음식 카테고리 테이블
 create table category
@@ -88,9 +86,9 @@ delivery_num varchar2(10) primary key,
 delivery_receiver varchar2(100) references users(user_id),
 delivery_restaurant varchar2(10) references restaurant(restaurant_num),
 delivery_menu varchar2(10) references menu(menu_num),
-delivery_country varchar2(100),
-delivery_city varchar2(100),   -- 시(ex 대구)
-delivery_street varchar2(100), -- 도로명 주소
+delivery_country varchar2(100) references country(country_code),
+delivery_city varchar2(100) references city(city_code),   
+delivery_street varchar2(100), 
 delivery_date date,
 delivery_situation varchar2(10)
 );
