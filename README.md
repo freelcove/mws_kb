@@ -24,3 +24,7 @@ https://www.miricanvas.com/login?redirect=%2Fdesign%2F11x0tps
 - 이진곤: jingoni549@gmail.com
 - 장대건: jdg8985@gmail.com
 - 소병수: baptist0602@gmail.com
+
+
+# 조장님 보시오!
+https://sooso1234.github.io/
