@@ -6,7 +6,7 @@ https://miro.com/app/board/uXjVMagPA0c=/
 https://www.notion.so/freelcove/MWS-KB-ccce98ad916c4ac6b0bad7fb738eb316?pvs=4
 
 
-#DB Project
+# DB Project
 ## 요구사항 명세서
 https://docs.google.com/spreadsheets/d/1Ffk7X-L3KYpmgyzQEli0WWptiFud4qxwf4IXBaaB1Jo/edit?usp=sharing
 
