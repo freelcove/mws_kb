@@ -1,8 +1,5 @@
 # Mini Web Simulator - KB edition
 
-프로토타입 개발 중
-https://mini-web-simulator.vercel.app/
-
 # Progress Board
 https://miro.com/app/board/uXjVMagPA0c=/
 
